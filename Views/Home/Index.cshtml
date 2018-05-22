@@ -132,9 +132,9 @@
                     </md-button>
                 </div>
             </md-toolbar>
-            <md-content>
+            <md-content class="md-scrollbar"  style="overflow:auto;">
                 <template  v-if="nowFunc == 'testVisible'">
-                    <md-steppers md-vertical id="testSteppers" class="md-scrollbar"  style="overflow:auto;" >
+                    <md-steppers md-vertical id="testSteppers"   >
                         <md-step id="a" md-label="來源管道" md-description="你在哪裡和蛋蛋的健康也有關係唷!">
                             <div class="md-layout md-gutter md-alignment-center-center">
                                 <div class="md-layout-item">
@@ -276,7 +276,7 @@
                 <template v-if="nowFunc == 'infoVisible'">
                     <md-tabs>
                         <md-tab id="tab-info" md-label="危雞知識庫">
-                            <div id="infoLab" style="overflow:auto;" class="md-scrollbar">
+                            <md-content id="infoLab" style="overflow:auto;" class="md-scrollbar">
                                 <template :md-active.sync="info.isShow">
                                     <div class="md-layout md-gutter md-alignment-center" v-for="i in info.infoList.length">
                                         <div class="md-layout-item">
@@ -306,7 +306,7 @@
                                         </div>
                                     </div>
                                 </template>
-                            </div>
+                            </md-content>
                         </md-tab>
                         <md-tab id="tab-pages" md-label="危雞百顆小測驗" to="/components/tabs/pages">
 
@@ -339,7 +339,7 @@
             </md-toolbar>
             <md-content>
                <template v-if="nowFunc == 'eventVisible'">
-                   <div id="eventCard" style="overflow:auto;" class="md-layout md-gutter md-alignment-center md-scrollbar">
+                   <md-content id="eventCard" style="overflow:auto;" class="md-layout md-gutter md-alignment-center md-scrollbar">
                        <md-card v-for="i in event.eventList">
                            <md-card-media-cover md-text-scrim>
                                <md-card-media md-ratio="18:9">
@@ -356,7 +356,7 @@
                                </md-card-area>
                            </md-card-media-cover>
                        </md-card>
-                   </div>
+                   </md-content>
                     
                </template>
                 <template v-else>
